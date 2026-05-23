@@ -1,3 +1,4 @@
+from src import fitness
 from src.representation import (
     largest_connected_component,
     count_filled_voxels,
@@ -20,7 +21,7 @@ def evaluate_genome(genome):
     filled = count_filled_voxels(cleaned)
 
     if filled == 0:
-        return 0.0
+        return (0.0,)
 
     active = count_active_voxels(cleaned)
     active_fraction = active_ratio(cleaned)
@@ -30,4 +31,4 @@ def evaluate_genome(genome):
 
     fitness = active * size_score * (0.5 + active_fraction)
 
-    return float(fitness)
+    return (float(fitness),)
