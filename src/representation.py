@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.ndimage import label
 
 EMPTY = 0
 PASSIVE = 1
@@ -66,3 +67,27 @@ def fill_ratio(genome):
     total = total_voxels(genome)
 
     return filled / total
+
+
+def largest_connected_component(genome):
+    """
+    Keep only the largest connected group of non-empty voxels.
+    """
+    filled = genome != EMPTY
+
+    if np.sum(filled) == 0:
+        return genome.copy()
+
+    labeled, num_features = label(filled)
+
+    if num_features == 0:
+        return genome.copy()
+
+    component_sizes = np.bincount(labeled.ravel())
+    component_sizes[0] = 0
+
+    largest_label = component_sizes.argmax()
+
+    cleaned = np.where(labeled == largest_label, genome, EMPTY)
+
+    return cleaned
