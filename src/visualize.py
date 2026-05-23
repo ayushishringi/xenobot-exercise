@@ -22,3 +22,21 @@ def plot_voxel_slices(genome, save_path=None):
             plt.savefig(filename, dpi=150, bbox_inches="tight")
 
         plt.show()
+
+def plot_material_counts(genome):
+    """
+    Plot how many voxels belong to each material type.
+    """
+    material_names = ["empty", "passive", "active +", "active -"]
+    counts = []
+
+    for material_id in range(4):
+        count = (genome == material_id).sum()
+        counts.append(count)
+
+    plt.figure()
+    plt.bar(material_names, counts)
+    plt.xlabel("Material type")
+    plt.ylabel("Voxel count")
+    plt.title("Material distribution")
+    plt.show()
