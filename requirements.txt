@@ -1,0 +1,7 @@
+numpy
+scipy
+matplotlib
+deap
+jupyter
+pytest
+pyyaml
