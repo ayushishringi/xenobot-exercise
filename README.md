@@ -7,5 +7,14 @@ So far, the project includes:
 - voxel counting and material statistics
 - connectivity repair using the largest connected component
 - a simple placeholder fitness function for testing
+- a basic evolutionary algorithm using DEAP
+- diagnostic plots and voxel visualizations
 
-The full project will later include evolutionary search, simulation-based fitness, diagnostic plots, and robot visualization.
+The full project will later include simulation-based fitness, extended experiments, and robot videos.
+
+## How to run
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
