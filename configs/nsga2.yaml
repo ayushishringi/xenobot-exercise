@@ -1,0 +1,38 @@
+# NSGA-II multi-objective configuration
+
+seed: 42
+grid_size: [8, 8, 8]
+
+population_size: 52
+generations: 100
+
+algorithm:
+  name: NSGA-II
+  library: DEAP
+
+objectives:
+  - name: fallback_displacement_score
+    direction: maximize
+  - name: filled_voxel_count
+    direction: minimize
+  - name: active_material_ratio
+    direction: maximize
+
+selection:
+  method: selNSGA2
+
+crossover:
+  method: slice_crossover
+  probability: 0.5
+
+mutation:
+  method: per_voxel_random_resample
+  probability: 0.3
+  indpb: 0.05
+
+constraints:
+  min_voxels: 5
+
+notes: >
+  This configuration documents the multi-objective extension used in Milestone 4.
+  Scores are fallback simulator scores, not real VoxCraft-sim physics results.

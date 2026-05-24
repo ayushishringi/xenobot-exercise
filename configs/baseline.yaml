@@ -1,0 +1,30 @@
+# Baseline evolutionary algorithm configuration
+
+seed: 42
+grid_size: [8, 8, 8]
+
+population_size: 30
+generations: 20
+
+selection:
+  method: tournament
+  tournament_size: 3
+
+crossover:
+  method: slice_crossover
+  probability: 0.5
+
+mutation:
+  method: per_voxel_random_resample
+  probability: 0.3
+  indpb: 0.05
+
+fitness:
+  simulator: fallback_displacement
+  objective: maximize_fallback_displacement
+  min_voxels: 5
+
+notes: >
+  This configuration documents the baseline single-objective evolutionary
+  experiment. The project uses a fallback displacement-style simulator because
+  full VoxCraft-sim physics did not complete in the available environment.
