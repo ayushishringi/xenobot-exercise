@@ -1,0 +1,61 @@
+--- Starting Q8 Timing Study ---
+Grid size 8x8x8 (512 voxels): 0.000074s
+Grid size 16x16x16 (4096 voxels): 0.000092s
+Grid size 32x32x32 (32768 voxels): 0.000480s
+Grid size 64x64x64 (262144 voxels): 0.003905s
+Grid size 128x128x128 (2097152 voxels): 0.034510s
+Grid size 256x256x256 (16777216 voxels): 0.282778s
+Grid size 384x384x384 (56623104 voxels): 0.963745s
+Grid size 512x512x512 (134217728 voxels): 2.237325s
+Reached 1s threshold at N=512!
+
+--- Starting Q10 & Q14 Diversity Study ---
+Initial diversity: 241.0939
+Target diversity (10%): 24.1094
+Diversity collapsed below 10% of initial value at Generation 78
+
+Q14 Diversity checkpoints (mean ± std across 3 seeds):
+Operator                  Gen51       Gen101      Gen151      Gen200     
+----------------------------------------------------------------------
+mutate_random_flip        58.89±4.67 24.55±8.41 15.52±4.57 14.79±1.25
+mutate_block              28.06±4.62 12.56±0.59 16.54±7.72 9.40±1.27
+mutate_grow_shrink        23.60±5.86 10.84±2.30 19.82±6.39 14.65±3.03
+
+--- Starting Milestone 3 Ablation Experiments ---
+Running condition: baseline
+Running condition: no_crossover
+Running condition: no_connectivity
+Running condition: random_selection
+Running condition: single_material
+Running condition: no_mutation
+
+Q18 Ablation Results at Generation 200 (mean ± std across 3 seeds):
+baseline            : 345.0993 ± 2.0339
+no_crossover        : 323.3075 ± 0.6947
+no_connectivity     : 342.0192 ± 2.6945
+random_selection    : 189.4532 ± 13.1376
+single_material     : 196.9610 ± 3.3249
+no_mutation         : 194.8709 ± 3.0818
+
+Q19 Mann-Whitney U test against baseline:
+baseline vs no_crossover        : U=9.0, p-value=0.1000 (Not Significant)
+baseline vs no_connectivity     : U=7.0, p-value=0.4000 (Not Significant)
+baseline vs random_selection    : U=9.0, p-value=0.1000 (Not Significant)
+baseline vs single_material     : U=9.0, p-value=0.1000 (Not Significant)
+baseline vs no_mutation         : U=9.0, p-value=0.1000 (Not Significant)
+
+--- Starting Q22 Hypervolume Comparison ---
+NSGA-II Pareto Front size: 50
+NSGA-II Hypervolume: 127360.19
+Running Random Search Baseline (5200 evaluations)...
+Random Search Pareto Front size: 36
+Random Search Hypervolume: 59802.08
+NSGA-II hypervolume is 2.13x larger than Random Search hypervolume!
+
+--- Starting Q23 & Q24 Morphological Analysis ---
+Correlation between COM height and displacement: 0.5970
+
+--- Starting Extension STL Export ---
+Successfully exported STL mesh to /Users/aswinjohn/xenobot-exercise/results/best_distance_robot.stl
+
+All analyses ran successfully.

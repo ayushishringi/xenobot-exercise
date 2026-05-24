@@ -1,4 +1,3 @@
-from src import fitness
 from src.representation import (
     largest_connected_component,
     count_filled_voxels,

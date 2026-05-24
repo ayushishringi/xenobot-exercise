@@ -48,9 +48,14 @@ def evaluate_with_simulator(genome, use_voxcraft=False):
     is not available in the current local environment.
     """
     if use_voxcraft:
-        raise NotImplementedError(
-            "VoxCraft-sim is not installed in this environment. "
-            "Use pseudo_simulated_displacement for local experiments."
-        )
+        import tempfile
+        import math
+        from src.voxcraft_runner import genome_to_vxa, run_voxcraft
+        
+        with tempfile.NamedTemporaryFile(suffix=".vxa") as tmp_vxa:
+            genome_to_vxa(genome, tmp_vxa.name)
+            dx, dy, dz = run_voxcraft(tmp_vxa.name)
+            distance = math.sqrt(dx**2 + dy**2)
+            return (distance,)
 
     return (pseudo_simulated_displacement(genome),)
