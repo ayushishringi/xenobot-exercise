@@ -54,15 +54,5 @@ A real VoxCraft-sim integration was attempted in Google Colab with a T4 GPU. The
 The fallback simulator is not claimed to be real VoxCraft-sim physics. It is used to test the evolutionary pipeline, ablation study, and multi-objective optimization workflow.
 
 
-Then save with **Cmd + S**.
 
-After that, run:
-
-```bash
-git status
-git add README.md
-git commit -m "Update README for final project status"
-git push
-git status
-```
 
