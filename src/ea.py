@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-from deap import base, creator, tools, algorithms
+from deap import base, creator, tools
 
 from src.representation import random_genome, largest_connected_component
 from src.fitness import evaluate_genome

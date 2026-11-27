@@ -4,7 +4,7 @@ import os
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from src.representation import EMPTY, PASSIVE, ACTIVE_P, ACTIVE_N
+from src.representation import PASSIVE, ACTIVE_P, ACTIVE_N
 
 VOXCRAFT_BIN = Path(os.environ.get('VOXCRAFT_BIN', 'voxcraft-sim'))
 
