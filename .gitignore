@@ -7,3 +7,10 @@ __pycache__/
 *.xml
 # Exclude any extracted directories or temporary files
 # evosoro/
+
+# Environments, secrets and caches
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.ruff_cache/
