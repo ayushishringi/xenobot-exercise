@@ -50,7 +50,7 @@ def setup_ablation_toolbox(condition, base_toolbox):
     """
     import random
     from deap import tools
-    from src.representation import random_genome, count_filled_voxels
+    from src.representation import random_genome
 
     # Clone the toolbox conceptually (DEAP toolboxes are just objects, we can register over them, 
     # but to be safe we might want a fresh one, assuming base_toolbox is fresh).
